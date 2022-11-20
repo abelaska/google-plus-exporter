@@ -1,0 +1,13 @@
+Microsoft/
+dist/
+dist.*/
+main/out/
+static/
+data/
+renderer/out/
+renderer/.next/
+main/version.js
+index.html
+favicon.ico
+*.jsc
+*.log

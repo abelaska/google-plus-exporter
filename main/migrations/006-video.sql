@@ -1,0 +1,14 @@
+-- Up
+CREATE TABLE IF NOT EXISTS video(
+  id TEXT NOT NULL,
+  url TEXT NOT NULL,
+  albumUrl TEXT NOT NULL,
+  -- 0=REGISTERED, 1=DOWNLOADED
+  state INTEGER CHECK( state IN (0, 1) ) NOT NULL DEFAULT 0,
+  size INTEGER NOT NULL DEFAULT 0,
+  ext TEXT,
+  PRIMARY KEY(id)
+);
+CREATE INDEX IF NOT EXISTS idx_video_state ON video(state);
+
+-- Down

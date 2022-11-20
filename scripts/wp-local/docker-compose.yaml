@@ -1,0 +1,16 @@
+web:
+  image: wordpress:5
+  links:
+    - mysql
+  environment:
+    - WORDPRESS_DB_PASSWORD=password
+  ports:
+    - '127.0.0.1:9000:80'
+  volumes:
+    - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+
+mysql:
+  image: mysql:5.7
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=my-wpdb
